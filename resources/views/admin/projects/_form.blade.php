@@ -93,8 +93,14 @@
         </div>
     </div>
 
-    {{-- Estado, destacado, orden --}}
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+ {{-- Estado, destacado, orden --}}
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+            <label class="block font-semibold mb-1">Fecha de publicación</label>
+            <input type="date" name="published_at"
+                   value="{{ old('published_at', isset($project->published_at) ? $project->published_at->format('Y-m-d') : now()->format('Y-m-d')) }}"
+                   class="w-full border rounded px-3 py-2">
+        </div>
         <div>
             <label class="block font-semibold mb-1">Estado</label>
             <select name="status" class="w-full border rounded px-3 py-2">
