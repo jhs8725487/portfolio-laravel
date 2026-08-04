@@ -3,8 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Jhoel Herrera — Backend Developer')</title>
-    <meta name="description" content="Portafolio de Jhoel Herrera, desarrollador backend Laravel.">
+
+    <title>@yield('title', 'Jhoel Herrera — Backend Developer Laravel | Cochabamba, Bolivia')</title>
+    <meta name="description" content="@yield('description', 'Portafolio de Jhoel Herrera, desarrollador backend especializado en Laravel y aplicaciones Android con Kotlin. Cochabamba, Bolivia.')">
+    <meta name="keywords" content="Jhoel Herrera, desarrollador Laravel, backend developer Bolivia, desarrollador Android Kotlin, Cochabamba">
+    <meta name="author" content="Jhoel Herrera">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    {{-- Open Graph (Facebook, WhatsApp, LinkedIn) --}}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@yield('title', 'Jhoel Herrera — Backend Developer Laravel')">
+    <meta property="og:description" content="@yield('description', 'Portafolio de Jhoel Herrera, desarrollador backend especializado en Laravel y aplicaciones Android con Kotlin.')">
+    <meta property="og:image" content="{{ asset('images/photo.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:locale" content="es_BO">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Jhoel Herrera — Backend Developer Laravel')">
+    <meta name="twitter:description" content="@yield('description', 'Portafolio de Jhoel Herrera, desarrollador backend especializado en Laravel.')">
+    <meta name="twitter:image" content="{{ asset('images/photo.jpg') }}">
+
+    {{-- Favicon --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-950 text-gray-100 antialiased">

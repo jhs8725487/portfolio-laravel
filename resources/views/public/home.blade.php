@@ -4,7 +4,7 @@
 
 @section('content')
 
-   {{-- Hero --}}
+    {{-- Hero --}}
     <section class="max-w-5xl mx-auto px-6 pt-24 pb-16">
         <div class="flex flex-col-reverse md:flex-row items-center gap-10">
             <div class="flex-1">
@@ -40,7 +40,9 @@
                 @foreach ($featuredProjects as $project)
                     <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-indigo-500 transition">
                         <span class="text-xs text-indigo-400 font-medium">{{ $project->type->name }}</span>
-                        <h3 class="text-lg font-semibold mt-2 mb-2">{{ $project->title }}</h3>
+                        <h3 class="text-lg font-semibold mt-2 mb-2">
+                            <a href="{{ route('projects.show', $project) }}" class="hover:text-indigo-400 transition">{{ $project->title }}</a>
+                        </h3>
                         <p class="text-gray-400 text-sm mb-4">{{ $project->short_description }}</p>
                         <div class="flex flex-wrap gap-2">
                             @foreach ($project->technologies->take(3) as $tech)
@@ -60,7 +62,9 @@
             @forelse ($projects as $project)
                 <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
                     <span class="text-xs text-indigo-400 font-medium">{{ $project->type->name }}</span>
-                    <h3 class="text-lg font-semibold mt-2 mb-2">{{ $project->title }}</h3>
+                    <h3 class="text-lg font-semibold mt-2 mb-2">
+                        <a href="{{ route('projects.show', $project) }}" class="hover:text-indigo-400 transition">{{ $project->title }}</a>
+                    </h3>
                     <p class="text-gray-400 text-sm mb-4">{{ $project->short_description }}</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         @foreach ($project->technologies as $tech)

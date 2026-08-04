@@ -23,4 +23,13 @@ class PublicController extends Controller
 
         return view('public.home', compact('featuredProjects', 'projects'));
     }
+
+    public function showProject(Project $project)
+    {
+        abort_unless($project->status === 'published', 404);
+
+        $project->load(['type', 'technologies', 'images']);
+
+        return view('public.project-show', compact('project'));
+    }
 }

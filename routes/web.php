@@ -23,5 +23,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
      Route::resource('projects', ProjectController::class)->except('show');
 });
 
+Route::get('/sitemap.xml', function () {
+    return response()
+        ->view('sitemap')
+        ->header('Content-Type', 'text/xml');
+});
+
+Route::get('/proyectos/{project:slug}', [PublicController::class, 'showProject'])->name('projects.show');
 
 require __DIR__.'/auth.php';
