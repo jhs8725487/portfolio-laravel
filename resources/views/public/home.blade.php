@@ -4,23 +4,31 @@
 
 @section('content')
 
-    {{-- Hero --}}
+   {{-- Hero --}}
     <section class="max-w-5xl mx-auto px-6 pt-24 pb-16">
-        <p class="text-indigo-400 text-sm font-medium mb-3">Backend Developer · Laravel</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Hola, soy Jhoel Herrera.
-        </h1>
-        <p class="text-gray-400 text-lg max-w-2xl">
-            Construyo sistemas web robustos con Laravel, aplicaciones Android con Kotlin,
-            y me enfoco en arquitectura limpia y buenas prácticas de código.
-        </p>
-        <div class="flex gap-4 mt-8">
-            <a href="#proyectos" class="bg-indigo-600 hover:bg-indigo-500 transition px-5 py-2.5 rounded-lg text-sm font-medium">
-                Ver proyectos
-            </a>
-            <a href="#contacto" class="border border-gray-700 hover:border-gray-500 transition px-5 py-2.5 rounded-lg text-sm font-medium">
-                Contactarme
-            </a>
+        <div class="flex flex-col-reverse md:flex-row items-center gap-10">
+            <div class="flex-1">
+                <p class="text-indigo-400 text-sm font-medium mb-3">Backend Developer · Laravel</p>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                    Hola, soy Jhoel Herrera.
+                </h1>
+                <p class="text-gray-400 text-lg max-w-2xl">
+                    Construyo sistemas web robustos con Laravel, aplicaciones Android con Kotlin,
+                    y me enfoco en arquitectura limpia y buenas prácticas de código.
+                </p>
+                <div class="flex gap-4 mt-8">
+                    <a href="#proyectos" class="bg-indigo-600 hover:bg-indigo-500 transition px-5 py-2.5 rounded-lg text-sm font-medium">
+                        Ver proyectos
+                    </a>
+                    <a href="#contacto" class="border border-gray-700 hover:border-gray-500 transition px-5 py-2.5 rounded-lg text-sm font-medium">
+                        Contactarme
+                    </a>
+                </div>
+            </div>
+            <div class="shrink-0">
+                <img src="{{ asset('images/photo.jpg') }}" alt="Jhoel Herrera"
+                     class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-2 border-gray-800">
+            </div>
         </div>
     </section>
 
