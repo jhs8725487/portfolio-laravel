@@ -5,4 +5,12 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+    @foreach ($projects as $project)
+    <url>
+        <loc>{{ route('projects.show', $project) }}</loc>
+        <lastmod>{{ $project->updated_at->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    @endforeach
 </urlset>

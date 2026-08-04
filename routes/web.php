@@ -24,8 +24,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 });
 
 Route::get('/sitemap.xml', function () {
+    $projects = \App\Models\Project::published()->get();
+
     return response()
-        ->view('sitemap')
+        ->view('sitemap', compact('projects'))
         ->header('Content-Type', 'text/xml');
 });
 
