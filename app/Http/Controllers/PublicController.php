@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Post;
 
 class PublicController extends Controller
 {
@@ -32,4 +33,23 @@ class PublicController extends Controller
 
         return view('public.project-show', compact('project'));
     }
+
+    public function blog()
+{
+    $posts = Post::with(['author', 'category', 'tags'])
+        ->published()
+        ->orderByDesc('published_at')
+        ->paginate(9);
+
+    return view('public.blog-index', compact('posts'));
+}
+
+public function showPost(Post $post)
+{
+    abort_unless($post->status === 'published', 404);
+
+    $post->load(['author', 'category', 'tags']);
+
+    return view('public.post-show', compact('post'));
+}
 }

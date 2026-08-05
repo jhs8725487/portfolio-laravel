@@ -34,10 +34,11 @@
     <header class="border-b border-gray-800 sticky top-0 bg-gray-950/90 backdrop-blur z-50">
         <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="{{ route('home') }}" class="font-bold text-lg tracking-tight">JH<span class="text-indigo-400">.</span></a>
-            <div class="flex gap-6 text-sm text-gray-400">
-                <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
-                <a href="#contacto" class="hover:text-white transition">Contacto</a>
-            </div>
+          <div class="flex gap-6 text-sm text-gray-400">
+    <a href="{{ route('home') }}#proyectos" class="hover:text-white transition">Proyectos</a>
+    <a href="{{ route('blog.index') }}" class="hover:text-white transition">Blog</a>
+    <a href="{{ route('home') }}#contacto" class="hover:text-white transition">Contacto</a>
+</div>
         </nav>
     </header>
 
@@ -66,5 +67,4 @@
 
 </body>
 
-</body>
 </html>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectTypeController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\Admin\PostController;
 
 Route::get('/', [PublicController::class, 'home'])->name('home');
 
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('project-types', ProjectTypeController::class)->except('show');
      Route::resource('projects', ProjectController::class)->except('show');
+     Route::resource('posts', PostController::class)->except('show');
 });
 
 Route::get('/sitemap.xml', function () {
@@ -32,5 +34,6 @@ Route::get('/sitemap.xml', function () {
 });
 
 Route::get('/proyectos/{project:slug}', [PublicController::class, 'showProject'])->name('projects.show');
-
+Route::get('/blog', [PublicController::class, 'blog'])->name('blog.index');
+Route::get('/blog/{post:slug}', [PublicController::class, 'showPost'])->name('blog.show');
 require __DIR__.'/auth.php';

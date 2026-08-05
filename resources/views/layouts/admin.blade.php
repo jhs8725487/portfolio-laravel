@@ -10,12 +10,20 @@
     <div class="min-h-screen flex">
         <aside class="w-56 bg-gray-900 text-gray-200 flex-shrink-0">
             <div class="p-4 text-lg font-bold text-white">Portafolio Admin</div>
-            <nav class="mt-4 space-y-1">
-                <a href="{{ route('admin.project-types.index') }}"
-                   class="block px-4 py-2 hover:bg-gray-800 {{ request()->routeIs('admin.project-types.*') ? 'bg-gray-800 text-white' : '' }}">
-                    Tipos de Proyecto
-                </a>
-            </nav>
+           <nav class="mt-4 space-y-1">
+    <a href="{{ route('admin.project-types.index') }}"
+       class="block px-4 py-2 hover:bg-gray-800 {{ request()->routeIs('admin.project-types.*') ? 'bg-gray-800 text-white' : '' }}">
+        Tipos de Proyecto
+    </a>
+    <a href="{{ route('admin.projects.index') }}"
+       class="block px-4 py-2 hover:bg-gray-800 {{ request()->routeIs('admin.projects.*') ? 'bg-gray-800 text-white' : '' }}">
+        Proyectos
+    </a>
+    <a href="{{ route('admin.posts.index') }}"
+       class="block px-4 py-2 hover:bg-gray-800 {{ request()->routeIs('admin.posts.*') ? 'bg-gray-800 text-white' : '' }}">
+        Blog
+    </a>
+</nav>
         </aside>
 
         <div class="flex-1">
